@@ -1,0 +1,35 @@
+@use "dashboard";
+
+$accent: #4fd1c5;
+$text-main: #2d3748;
+$page-background: #f8f9fa;
+
+@mixin progress-fill($color) {
+    height: 100%;
+    border-radius: inherit;
+    background: $color;
+}
+
+:root {
+    --accent: #{$accent};
+    --text-main: #{$text-main};
+    --page-bg: #{$page-background};
+}
+
+.metric-track {
+    span {
+        @include progress-fill($accent);
+    }
+}
+
+.project-progress {
+    .progress-bar {
+        @include progress-fill($accent);
+    }
+}
+
+@each $value in 10, 25, 40, 60, 66, 85, 100 {
+    .fill-#{$value} {
+        width: $value * 1%;
+    }
+}

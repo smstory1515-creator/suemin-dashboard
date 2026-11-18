@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purity UI Dashboard</title>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css"
+    >
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <a class="brand" href="index.html">
+                <img
+                    src="images/INM%20320%20CSS%20Framework/logo-brand.svg"
+                    alt=""
+                    width="24"
+                    height="24"
+                >
+                <span>PURITY UI DASHBOARD</span>
+            </a>
+
+            <nav aria-label="Main navigation">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html" aria-current="page">
+                            <span class="nav-icon">
+                                <img src="images/INM%20320%20CSS%20Framework/icon-home.svg" alt="">
+                            </span>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">
+                            <span class="nav-icon">
+                                <img src="images/INM%20320%20CSS%20Framework/icon-chart.svg" alt="">
+                            </span>
+                            Tables
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#orders">
+                            <span class="nav-icon">
+                                <img src="images/INM%20320%20CSS%20Framework/icon-card.svg" alt="">
+                            </span>
+                            Billing
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" type="button" id="direction-toggle" aria-pressed="false">
+                            <span class="nav-icon">
+                                <img src="images/INM%20320%20CSS%20Framework/icon-tool.svg" alt="">
+                            </span>
+                            RTL
+                        </button>
+                    </li>
+                </ul>
+
+                <h2 class="nav-heading">ACCOUNT PAGES</h2>
+
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <button class="nav-link" type="button" data-bs-toggle="modal" data-bs-target="#account-modal">
+                            <span class="nav-icon">
+                                <img src="images/INM%20320%20CSS%20Framework/icon-profile.svg" alt="">
+                            </span>
+                            Profile
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" type="button" data-bs-toggle="modal" data-bs-target="#account-modal">
+                            <span class="nav-icon">
+                                <img src="images/INM%20320%20CSS%20Framework/icon-signin.svg" alt="">
+                            </span>
+                            Sign In
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" type="button" data-bs-toggle="modal" data-bs-target="#account-modal">
+                            <span class="nav-icon">
+                                <img src="images/INM%20320%20CSS%20Framework/icon-rocket.svg" alt="">
+                            </span>
+                            Sign Up
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content" id="main-content" tabindex="-1">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div>
+                    <p class="breadcrumb-text">Pages <span>/ Dashboard</span></p>
+                    <h1>Dashboard</h1>
+                </div>
+
+                <div class="header-actions">
+                    <div class="search-box">
+                        <img src="images/INM%20320%20CSS%20Framework/icon-search.svg" alt="">
+                        <label class="visually-hidden" for="search">Search projects</label>
+                        <input
+                            class="form-control"
+                            id="search"
+                            type="search"
+                            placeholder="Type here..."
+                            aria-controls="project-rows"
+                        >
+                    </div>
+
+                    <button
+                        class="header-button sign-in"
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#account-modal"
+                    >
+                        <img src="images/INM%20320%20CSS%20Framework/icon-header-user.svg" alt="">
+                        <span>Sign In</span>
+                    </button>
+
+                    <button
+                        class="header-button"
+                        type="button"
+                        aria-label="Dashboard settings"
+                        data-bs-toggle="modal"
+                        data-bs-target="#settings-modal"
+                    >
+                        <img src="images/INM%20320%20CSS%20Framework/icon-settings.svg" alt="">
+                    </button>
+
+                    <a class="header-button" href="#orders" aria-label="View order notifications">
+                        <img src="images/INM%20320%20CSS%20Framework/icon-header-bell.svg" alt="">
+                    </a>
+                </div>
+            </header>
+
+            <!-- Statistics -->
+            <section class="row g-3 mb-3" aria-label="Dashboard statistics">
+                <div class="col-12 col-sm-6 col-xl-3">
+                    <article class="card stat-card">
+                        <div>
+                            <p>Today's Money</p>
+                            <h2>$53,000 <span class="positive">+55%</span></h2>
+                        </div>
+                        <span class="stat-icon">
+                            <img src="images/INM%20320%20CSS%20Framework/icon-wallet.svg" alt="">
+                        </span>
+                    </article>
+                </div>
+
+                <div class="col-12 col-sm-6 col-xl-3">
+                    <article class="card stat-card">
+                        <div>
+                            <p>Today's Users</p>
+                            <h2>2,300 <span class="positive">+5%</span></h2>
+                        </div>
+                        <span class="stat-icon">
+                            <img src="images/INM%20320%20CSS%20Framework/icon-globe.svg" alt="">
+                        </span>
+                    </article>
+                </div>
+
+                <div class="col-12 col-sm-6 col-xl-3">
+                    <article class="card stat-card">
+                        <div>
+                            <p>New Clients</p>
+                            <h2>+3,052 <span class="negative">-14%</span></h2>
+                        </div>
+                        <span class="stat-icon">
+                            <img src="images/INM%20320%20CSS%20Framework/icon-document.svg" alt="">
+                        </span>
+                    </article>
+                </div>
+
+                <div class="col-12 col-sm-6 col-xl-3">
+                    <article class="card stat-card">
+                        <div>
+                            <p>Total Sales</p>
+                            <h2>$173,000 <span class="positive">+8%</span></h2>
+                        </div>
+                        <span class="stat-icon">
+                            <img src="images/INM%20320%20CSS%20Framework/icon-cart.svg" alt="">
+                        </span>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Equal-width charts -->
+            <section class="row g-3 mb-3" aria-label="Dashboard charts">
+                <div class="col-12 col-lg-6">
+                    <article class="card panel chart-panel">
+                        <h2>Sales overview</h2>
+                        <p class="subtitle">
+                            <span class="positive">(+5) more</span> in 2021
+                        </p>
+
+                        <div class="sales-chart">
+                            <svg viewBox="0 0 640 280" role="img" aria-labelledby="sales-title">
+                                <title id="sales-title">
+                                    Sales overview: two example series from January to December
+                                </title>
+                                <defs>
+                                    <linearGradient id="sales-teal" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#4fd1c5" stop-opacity=".55"/>
+                                        <stop offset="100%" stop-color="#4fd1c5" stop-opacity="0"/>
+                                    </linearGradient>
+                                    <linearGradient id="sales-gray" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#2d3748" stop-opacity=".3"/>
+                                        <stop offset="100%" stop-color="#2d3748" stop-opacity="0"/>
+                                    </linearGradient>
+                                </defs>
+
+                                <g class="chart-grid">
+                                    <path d="M40 25H625 M40 65H625 M40 105H625 M40 145H625 M40 185H625 M40 225H625"/>
+                                </g>
+
+                                <g class="chart-labels">
+                                    <text x="10" y="29">500</text>
+                                    <text x="10" y="69">400</text>
+                                    <text x="10" y="109">300</text>
+                                    <text x="10" y="149">200</text>
+                                    <text x="10" y="189">100</text>
+                                    <text x="22" y="229">0</text>
+                                </g>
+
+                                <path
+                                    d="M40 25 C65 28 82 58 94 125 S154 151 180 125 S229 138 270 141 S313 117 350 126 S399 135 430 158 S478 193 515 176 S573 144 625 174 L625 225 L40 225Z"
+                                    fill="url(#sales-gray)"
+                                />
+                                <path
+                                    d="M40 25 C65 28 82 58 94 125 S154 151 180 125 S229 138 270 141 S313 117 350 126 S399 135 430 158 S478 193 515 176 S573 144 625 174"
+                                    class="sales-line gray-line"
+                                />
+                                <path
+                                    d="M40 153 C72 138 94 130 120 140 S158 117 180 95 S226 89 250 80 S280 30 320 39 S359 83 400 100 S432 95 460 85 S492 99 515 126 S546 139 555 95 S588 59 625 53 L625 225 L40 225Z"
+                                    fill="url(#sales-teal)"
+                                />
+                                <path
+                                    d="M40 153 C72 138 94 130 120 140 S158 117 180 95 S226 89 250 80 S280 30 320 39 S359 83 400 100 S432 95 460 85 S492 99 515 126 S546 139 555 95 S588 59 625 53"
+                                    class="sales-line teal-line"
+                                />
+
+                                <g class="chart-labels month-labels">
+                                    <text x="45" y="255">Jan</text>
+                                    <text x="97" y="255">Feb</text>
+                                    <text x="149" y="255">Mar</text>
+                                    <text x="201" y="255">Apr</text>
+                                    <text x="253" y="255">May</text>
+                                    <text x="305" y="255">Jun</text>
+                                    <text x="357" y="255">Jul</text>
+                                    <text x="409" y="255">Aug</text>
+                                    <text x="461" y="255">Sep</text>
+                                    <text x="513" y="255">Oct</text>
+                                    <text x="565" y="255">Nov</text>
+                                    <text x="617" y="255">Dec</text>
+                                </g>
+                            </svg>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <article class="card panel chart-panel">
+                        <div class="active-chart">
+                            <svg viewBox="0 0 600 220" role="img" aria-labelledby="active-title">
+                                <title id="active-title">
+                                    Active users: nine example bars on a scale from zero to five hundred
+                                </title>
+                                <g class="active-axis">
+                                    <text x="18" y="34">500</text>
+                                    <text x="18" y="66">400</text>
+                                    <text x="18" y="98">300</text>
+                                    <text x="18" y="130">200</text>
+                                    <text x="18" y="162">100</text>
+                                    <text x="30" y="194">0</text>
+                                </g>
+                                <g class="active-bars">
+                                    <path d="M90 190V86"/>
+                                    <path d="M147 190V118"/>
+                                    <path d="M204 190V154"/>
+                                    <path d="M261 190V98"/>
+                                    <path d="M318 190V30"/>
+                                    <path d="M375 190V58"/>
+                                    <path d="M432 190V40"/>
+                                    <path d="M489 190V98"/>
+                                    <path d="M546 190V140"/>
+                                </g>
+                            </svg>
+                        </div>
+
+                        <h2 class="active-heading">Active Users</h2>
+                        <p class="subtitle">
+                            <span class="positive">(+23)</span> than last week
+                        </p>
+
+                        <div class="row g-3 active-metrics">
+                            <div class="col-6 col-sm-3">
+                                <p class="active-label">
+                                    <span class="metric-icon">
+                                        <img src="images/INM%20320%20CSS%20Framework/icon-wallet.svg" alt="">
+                                    </span>
+                                    Users
+                                </p>
+                                <p class="active-value">32,984</p>
+                                <div class="metric-track" aria-hidden="true"><span class="fill-66"></span></div>
+                            </div>
+                            <div class="col-6 col-sm-3">
+                                <p class="active-label">
+                                    <span class="metric-icon">
+                                        <img src="images/INM%20320%20CSS%20Framework/icon-rocket.svg" alt="">
+                                    </span>
+                                    Clicks
+                                </p>
+                                <p class="active-value">2,42m</p>
+                                <div class="metric-track" aria-hidden="true"><span class="fill-85"></span></div>
+                            </div>
+                            <div class="col-6 col-sm-3">
+                                <p class="active-label">
+                                    <span class="metric-icon">
+                                        <img src="images/INM%20320%20CSS%20Framework/icon-cart.svg" alt="">
+                                    </span>
+                                    Sales
+                                </p>
+                                <p class="active-value">2,400$</p>
+                                <div class="metric-track" aria-hidden="true"><span class="fill-40"></span></div>
+                            </div>
+                            <div class="col-6 col-sm-3">
+                                <p class="active-label">
+                                    <span class="metric-icon">
+                                        <img src="images/INM%20320%20CSS%20Framework/icon-tool.svg" alt="">
+                                    </span>
+                                    Items
+                                </p>
+                                <p class="active-value">320</p>
+                                <div class="metric-track" aria-hidden="true"><span class="fill-60"></span></div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Projects and orders -->
+            <section class="row g-3" aria-label="Projects and orders">
+                <div class="col-12 col-xl-8">
+                    <article class="card panel" id="projects">
+                        <div class="panel-heading">
+                            <div>
+                                <h2>Projects</h2>
+                                <p class="subtitle project-subtitle">
+                                    <img src="images/INM%20320%20CSS%20Framework/icon-check.svg" alt="">
+                                    <span><strong>30 done</strong> this month</span>
+                                </p>
+                            </div>
+
+                            <div class="dropdown">
+                                <button
+                                    class="more-button"
+                                    type="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                    aria-label="Project options"
+                                >
+                                    <span aria-hidden="true">⋮</span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <button class="dropdown-item" type="button" id="clear-search">
+                                            Show all projects
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="dropdown-item" type="button" id="sort-projects">
+                                            Sort by completion
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive" tabindex="0" role="region" aria-label="Project table">
+                            <table class="table align-middle projects-table">
+                                <caption class="visually-hidden">
+                                    Project teams, budgets and completion
+                                </caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">COMPANIES</th>
+                                        <th scope="col">MEMBERS</th>
+                                        <th scope="col">BUDGET</th>
+                                        <th scope="col">COMPLETION</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="project-rows"></tbody>
+                            </table>
+                        </div>
+                        <p id="search-status" class="visually-hidden" role="status"></p>
+                        <noscript>
+                            <p class="mt-3">Enable JavaScript to display the project table.</p>
+                        </noscript>
+                    </article>
+                </div>
+
+                <div class="col-12 col-xl-4">
+                    <article class="card panel" id="orders">
+                        <h2>Orders overview</h2>
+                        <p class="subtitle"><span class="positive">+30%</span> this month</p>
+
+                        <ol class="orders-list">
+                            <li class="order-item">
+                                <img class="order-icon" src="images/INM%20320%20CSS%20Framework/icon-order-bell.svg" alt="">
+                                <div>
+                                    <h3>$2400, Design changes</h3>
+                                    <p>22 DEC 7:20 PM</p>
+                                </div>
+                            </li>
+                            <li class="order-item">
+                                <img class="order-icon" src="images/INM%20320%20CSS%20Framework/icon-order-css3.svg" alt="">
+                                <div>
+                                    <h3>New order #4219423</h3>
+                                    <p>21 DEC 11:21 PM</p>
+                                </div>
+                            </li>
+                            <li class="order-item">
+                                <img class="order-icon" src="images/INM%20320%20CSS%20Framework/icon-order-cart.svg" alt="">
+                                <div>
+                                    <h3>Server Payments for April</h3>
+                                    <p>21 DEC 9:28 PM</p>
+                                </div>
+                            </li>
+                            <li class="order-item">
+                                <img class="order-icon" src="images/INM%20320%20CSS%20Framework/icon-order-card.svg" alt="">
+                                <div>
+                                    <h3>New card added for order #3210145</h3>
+                                    <p>20 DEC 3:52 PM</p>
+                                </div>
+                            </li>
+                            <li class="order-item">
+                                <img class="order-icon" src="images/INM%20320%20CSS%20Framework/icon-order-dropbox.svg" alt="">
+                                <div>
+                                    <h3>Unlock packages for Development</h3>
+                                    <p>19 DEC 11:35 PM</p>
+                                </div>
+                            </li>
+                            <li class="order-item">
+                                <img class="order-icon" src="images/INM%20320%20CSS%20Framework/logo-xd.svg" alt="">
+                                <div>
+                                    <h3>New order #9851258</h3>
+                                    <p>18 DEC 4:41 PM</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Bootstrap dialogs -->
+    <div class="modal fade" id="account-modal" tabindex="-1" aria-labelledby="account-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="account-title">Account demo</h2>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="account-form">
+                    <div class="modal-body">
+                        <p class="text-secondary">
+                            Classroom demonstration only. No account is created and no information is sent.
+                        </p>
+                        <div class="mb-3">
+                            <label class="form-label" for="display-name">Display name</label>
+                            <input class="form-control" id="display-name" type="text" maxlength="40" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="demo-email">Example email</label>
+                            <input class="form-control" id="demo-email" type="email" placeholder="student@example.com" required>
+                        </div>
+                        <p id="account-status" class="mb-0" role="status"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button>
+                        <button class="btn btn-accent" type="submit">Try form</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="settings-modal" tabindex="-1" aria-labelledby="settings-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="settings-title">Dashboard settings</h2>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="compact-table">
+                        <label class="form-check-label" for="compact-table">Compact project rows</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-accent" type="button" data-bs-dismiss="modal">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const imagePath = "images/INM%20320%20CSS%20Framework/";
+
+        const projects = [
+            {
+                name: "Chakra Soft UI Version",
+                logo: "logo-xd.svg",
+                members: [1, 2, 3, 4, 5],
+                budget: "$14,000",
+                completion: 60
+            },
+            {
+                name: "Add Progress Track",
+                logo: "logo-atlassian.svg",
+                members: [1, 2],
+                budget: "$3,000",
+                completion: 10
+            },
+            {
+                name: "Fix Platform Errors",
+                logo: "logo-slack.svg",
+                members: [1, 2],
+                budget: "Not set",
+                completion: 100
+            },
+            {
+                name: "Launch our Mobile App",
+                logo: "logo-spotify.svg",
+                members: [1, 2, 3, 4],
+                budget: "$32,000",
+                completion: 100
+            },
+            {
+                name: "Add the New Pricing Page",
+                logo: "logo-jira.svg",
+                members: [1, 2, 3, 4, 5],
+                budget: "$400",
+                completion: 25
+            },
+            {
+                name: "Redesign New Online Shop",
+                logo: "logo-invision.svg",
+                members: [1, 2],
+                budget: "$7,600",
+                completion: 40
+            }
+        ];
+
+        const search = document.querySelector("#search");
+        const projectRows = document.querySelector("#project-rows");
+        let sortByCompletion = false;
+
+        function renderProjects() {
+            const query = search.value.trim().toLowerCase();
+            const visibleProjects = projects.filter((project) =>
+                project.name.toLowerCase().includes(query)
+            );
+
+            if (sortByCompletion) {
+                visibleProjects.sort((a, b) => b.completion - a.completion);
+            }
+
+            projectRows.innerHTML = visibleProjects.map((project) => `
+                <tr>
+                    <th scope="row">
+                        <div class="company-cell">
+                            <img class="company-logo" src="${imagePath}${project.logo}" alt="">
+                            <span>${project.name}</span>
+                        </div>
+                    </th>
+                    <td>
+                        <div class="avatar-group" role="img" aria-label="${project.members.length} team members">
+                            ${project.members.map((member) => `
+                                <img src="${imagePath}Avatar%20${member}.png" alt="">
+                            `).join("")}
+                        </div>
+                    </td>
+                    <td class="budget-cell">${project.budget}</td>
+                    <td>
+                        <span class="completion-label">${project.completion}%</span>
+                        <div
+                            class="progress project-progress"
+                            role="progressbar"
+                            aria-label="${project.name} completion"
+                            aria-valuenow="${project.completion}"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                        >
+                            <div class="progress-bar fill-${project.completion}"></div>
+                        </div>
+                    </td>
+                </tr>
+            `).join("");
+
+            if (!visibleProjects.length) {
+                projectRows.innerHTML = '<tr><td colspan="4">No matching projects.</td></tr>';
+            }
+
+            document.querySelector("#search-status").textContent =
+                `${visibleProjects.length} projects shown.`;
+        }
+
+        search.addEventListener("input", renderProjects);
+
+        document.querySelector("#clear-search").addEventListener("click", () => {
+            search.value = "";
+            sortByCompletion = false;
+            renderProjects();
+        });
+
+        document.querySelector("#sort-projects").addEventListener("click", () => {
+            sortByCompletion = true;
+            renderProjects();
+        });
+
+        document.querySelector("#compact-table").addEventListener("change", (event) => {
+            document.querySelector(".projects-table").classList.toggle(
+                "compact",
+                event.target.checked
+            );
+        });
+
+        document.querySelector("#direction-toggle").addEventListener("click", (event) => {
+            const enabled = event.currentTarget.getAttribute("aria-pressed") !== "true";
+            event.currentTarget.setAttribute("aria-pressed", String(enabled));
+            document.querySelector(".dashboard-layout").classList.toggle("rtl-layout", enabled);
+        });
+
+        document.querySelector("#account-form").addEventListener("submit", (event) => {
+            event.preventDefault();
+            document.querySelector("#account-status").textContent =
+                "Form validated successfully. This demo has not created an account.";
+        });
+
+        document.querySelector("#account-modal").addEventListener("hidden.bs.modal", () => {
+            document.querySelector("#account-form").reset();
+            document.querySelector("#account-status").textContent = "";
+        });
+
+        renderProjects();
+    </script>
+</body>
+</html>
